@@ -1,0 +1,289 @@
+/* Popup Background */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 28px 24px;
+  border-radius: 16px;
+  width: 650px;
+  max-width: 96vw;
+  display: flex;
+  height: 480px;
+  min-height: 350px;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 1.5px 6px rgba(0,0,0,0.08);
+  border: 1.5px solid #e5e7eb;
+  animation: fadeIn 0.3s ease-in-out;
+  position: relative;
+}
+
+.dark-mode {
+  background-color: #0F172A;
+  color: #fff;
+}
+
+.popup-content.dark-mode {
+  background: #1e293b;
+  color: white;
+  border: 1.5px solid #334155;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.32), 0 1.5px 6px rgba(0,0,0,0.18);
+}
+
+/* Left Section */
+.left-section {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  padding-right: 18px;
+  border-right: 1.5px solid #e5e7eb;
+}
+
+.popup-content.dark-mode .left-section {
+  border-right: 1.5px solid #334155;
+}
+
+.pop-title {
+  font-size: 1.6rem;
+  margin-bottom: 18px;
+  color: #22223b;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.pop-title.dark-mode {
+  color: #fff;
+  background-color: #1e293b;
+}
+
+.popup-content select,
+.popup-content input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 7px;
+  font-size: 1.05rem;
+  outline: none;
+  margin-bottom: 10px;
+  background: #f8fafc;
+  color: #22223b;
+  transition: border 0.2s;
+}
+
+.popup-content.dark-mode select,
+.popup-content.dark-mode input {
+  background: #22304a;
+  color: #fff;
+  border: 1.5px solid #334155;
+}
+
+.popup-content select:focus,
+.popup-content input:focus {
+  border: 1.5px solid #2563eb;
+}
+
+.tot-amo, .balance {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin: 8px 0 12px 0;
+  color: #2563eb;
+}
+
+.tot-amo.dark-mode, .balance.dark-mode {
+  color: #60a5fa;
+  background-color: #1e293b;
+}
+
+.p-lbl {
+  color: #22223b;
+  background-color: transparent;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.p-lbl.dark-mode {
+  color: #fff;
+  background-color: #1e293b;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.p-con-btn {
+  background: linear-gradient(90deg, #2563eb 0%, #38bdf8 100%);
+  color: white;
+  padding: 10px 0;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 7px;
+  width: 140px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(56,189,248,0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.p-con-btn:hover {
+  background: linear-gradient(90deg, #1d4ed8 0%, #0ea5e9 100%);
+  box-shadow: 0 4px 16px rgba(56,189,248,0.16);
+}
+
+.p-print-btn {
+  background-color: #f1f5f9;
+  color: #2563eb;
+  border: none;
+  padding: 0 8px;
+  margin-left: 8px;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+}
+.p-print-btn:hover {
+  background-color: #e0e7ef;
+}
+.p-print-btn:disabled {
+  background-color: #e5e7eb;
+  color: #a1a1aa;
+  cursor: not-allowed;
+}
+.dark-mode .p-print-btn {
+  background-color: #22304a;
+  color: #60a5fa;
+}
+.dark-mode .p-print-btn:hover {
+  background-color: #334155;
+}
+
+.p-cancel-btn {
+  width: 120px;
+  height: 44px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 7px;
+  background: linear-gradient(90deg, #ef4444 0%, #f59e42 100%);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  margin: 0 auto 18px auto;
+  box-shadow: 0 2px 8px rgba(239,68,68,0.08);
+}
+.p-cancel-btn:hover {
+  background: linear-gradient(90deg, #b91c1c 0%, #f59e42 100%);
+  box-shadow: 0 4px 16px rgba(239,68,68,0.16);
+}
+
+.p-dialpad {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  grid-template-rows: repeat(4, 60px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+.p-dialpad button {
+  width: 60px;
+  height: 60px;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 7px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(37,99,235,0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.p-dialpad button:hover {
+  background: #1d4ed8;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.16);
+}
+.p-del-btn {
+  background: #ef4444 !important;
+}
+.p-del-btn:hover {
+  background: #b91c1c !important;
+}
+
+@media (max-width: 900px) {
+  .popup-content {
+    flex-direction: column;
+    width: 98vw;
+    height: auto;
+    min-height: 0;
+    padding: 16px 6px;
+  }
+  .left-section, .right-section {
+    width: 100%;
+    padding: 0;
+    border: none;
+  }
+  .left-section {
+    border-bottom: 1.5px solid #e5e7eb;
+    margin-bottom: 18px;
+  }
+  .popup-content.dark-mode .left-section {
+    border-bottom: 1.5px solid #334155;
+  }
+}
+
+@media (max-width: 600px) {
+  .popup-content {
+    flex-direction: column;
+    width: 100vw;
+    min-width: 0;
+    height: auto;
+    min-height: 0;
+    padding: 8px 2px;
+  }
+  .left-section, .right-section {
+    width: 100%;
+    padding: 0;
+    border: none;
+  }
+  .left-section {
+    border-bottom: 1.5px solid #e5e7eb;
+    margin-bottom: 12px;
+  }
+  .popup-content.dark-mode .left-section {
+    border-bottom: 1.5px solid #334155;
+  }
+  .p-dialpad {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 44px);
+    gap: 6px;
+  }
+  .p-dialpad button {
+    width: 100%;
+    height: 44px;
+    font-size: 1rem;
+  }
+  .p-cancel-btn {
+    width: 100%;
+    margin: 0 0 12px 0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
